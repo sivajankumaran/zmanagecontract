@@ -1,0 +1,28 @@
+[{
+	"__metadata": {
+		"id": "ProfitCenterF4Set('OZPM')",
+		"uri": "ProfitCenterF4Set('OZPM')",
+		"type": "API_SALES_ORDER_SRV.ProfitCenterF4"
+	},
+	"ProfitCenter": "OZPM",
+	"ProfitCenterText": "Profit Center X"	
+},
+{
+	"__metadata": {
+		"id": "ProfitCenterF4Set('ZREF')",
+		"uri": "ProfitCenterF4Set('ZREF')",
+		"type": "API_SALES_ORDER_SRV.ProfitCenterF4"
+	},
+	"ProfitCenter": "ZREF",
+	"ProfitCenterText": "Profit Center Y"	
+},
+{
+	"__metadata": {
+		"id": "ProfitCenterF4Set('SIPP')",
+		"uri": "ProfitCenterF4Set('SIPP')",
+		"type": "API_SALES_ORDER_SRV.ProfitCenterF4"
+	},
+	"ProfitCenter": "SIPP",
+	"ProfitCenterText": "Profit Center Z"	
+}
+]

@@ -1,0 +1,27 @@
+[{
+	"__metadata": {
+		"id": "SalesOrgF4Set('0123')",
+		"uri": "SalesOrgF4Set('0123')",
+		"type": "API_SALES_ORDER_SRV.SalesOrgF4"
+	},
+	"SalesOrganization": "0123",
+	"SalesOrganizationText": "Capita Secure InfoSol Ltd"
+},
+{
+	"__metadata": {
+		"id": "SalesOrgF4Set('0012')",
+		"uri": "SalesOrgF4Set('0012')",
+		"type": "API_SALES_ORDER_SRV.SalesOrgF4"
+	},
+	"SalesOrganization": "0012",
+	"SalesOrganizationText": "Capita Prop & Infra Ltd"
+},
+{
+	"__metadata": {
+		"id": "SalesOrgF4Set('0146')",
+		"uri": "SalesOrgF4Set('0146')",
+		"type": "API_SALES_ORDER_SRV.SalesOrgF4"
+	},
+	"SalesOrganization": "0146",
+	"SalesOrganizationText": "Capita Customer Mgmt Ltd"
+}]

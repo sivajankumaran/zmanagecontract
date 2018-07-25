@@ -1,0 +1,33 @@
+[{
+	"__metadata": {
+		"id": "DocumentTypeF4Set('01')",
+		"uri": "DocumentTypeF4Set('01')",
+		"type": "API_SALES_ORDER_SRV.DocumentTypeF4"
+	},
+	"SalesOrderType": "01",
+	"SalesOrderTypeText": "External Performace Based"
+}, {
+	"__metadata": {
+		"id": "DocumentTypeF4Set('02')",
+		"uri": "DocumentTypeF4Set('02')",
+		"type": "API_SALES_ORDER_SRV.DocumentTypeF4"
+	},
+	"SalesOrderType": "02",
+	"SalesOrderTypeText": "Bundled / Unbundled"
+}, {
+	"__metadata": {
+		"id": "DocumentTypeF4Set('03')",
+		"uri": "DocumentTypeF4Set('03')",
+		"type": "API_SALES_ORDER_SRV.DocumentTypeF4"
+	},
+	"SalesOrderType": "03",
+	"SalesOrderTypeText": "Project Based Services"
+}, {
+	"__metadata": {
+		"id": "DocumentTypeF4Set('04')",
+		"uri": "DocumentTypeF4Set('04')",
+		"type": "API_SALES_ORDER_SRV.DocumentTypeF4"
+	},
+	"SalesOrderType": "04",
+	"SalesOrderTypeText": "Service Contract"
+}]

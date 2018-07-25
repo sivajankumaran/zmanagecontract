@@ -1,0 +1,27 @@
+[{
+	"__metadata": {
+		"id": "MasterContractF4Set('01')",
+		"uri": "MasterContractF4Set('01')",
+		"type": "API_SALES_ORDER_SRV.MasterContractF4"
+	},
+	"MasterContract": "01",
+	"MasterContractText": "O2"	
+},
+{
+	"__metadata": {
+		"id": "MasterContractF4Set('02')",
+		"uri": "MasterContractF4Set('02')",
+		"type": "API_SALES_ORDER_SRV.MasterContractF4"
+	},
+	"MasterContract": "02",
+	"MasterContractText": "RPP"	
+},
+{
+	"__metadata": {
+		"id": "MasterContractF4Set('03')",
+		"uri": "MasterContractF4Set('03')",
+		"type": "API_SALES_ORDER_SRV.MasterContractF4"
+	},
+	"MasterContract": "03",
+	"MasterContractText": "Prudential"	
+}]

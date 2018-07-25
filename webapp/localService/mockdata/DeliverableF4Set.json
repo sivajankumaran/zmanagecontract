@@ -1,0 +1,73 @@
+[{
+	"__metadata": {
+		"id": "DeliverableF4Set('01')",
+		"uri": "DeliverableF4Set('01')",
+		"type": "API_SALES_ORDER_SRV.DeliverableF4"
+	},
+	"Deliverable": "01",
+	"DeliverableText": "License"	
+},
+{
+	"__metadata": {
+		"id": "DeliverableF4Set('02')",
+		"uri": "DeliverableF4Set('02')",
+		"type": "API_SALES_ORDER_SRV.DeliverableF4"
+	},
+	"Deliverable": "02",
+	"DeliverableText": "Implementation"	
+},
+{
+	"__metadata": {
+		"id": "DeliverableF4Set('03')",
+		"uri": "DeliverableF4Set('03')",
+		"type": "API_SALES_ORDER_SRV.DeliverableF4"
+	},
+	"Deliverable": "03",
+	"DeliverableText": "Service"	
+},
+{
+	"__metadata": {
+		"id": "DeliverableF4Set('04')",
+		"uri": "DeliverableF4Set('04')",
+		"type": "API_SALES_ORDER_SRV.DeliverableF4"
+	},
+	"Deliverable": "04",
+	"DeliverableText": "Change Request"	
+},
+{
+	"__metadata": {
+		"id": "DeliverableF4Set('05')",
+		"uri": "DeliverableF4Set('05')",
+		"type": "API_SALES_ORDER_SRV.DeliverableF4"
+	},
+	"Deliverable": "05",
+	"DeliverableText": "Training"	
+},
+{
+	"__metadata": {
+		"id": "DeliverableF4Set('06')",
+		"uri": "DeliverableF4Set('06')",
+		"type": "API_SALES_ORDER_SRV.DeliverableF4"
+	},
+	"Deliverable": "06",
+	"DeliverableText": "Construction Project"	
+},
+{
+	"__metadata": {
+		"id": "DeliverableF4Set('07')",
+		"uri": "DeliverableF4Set('07')",
+		"type": "API_SALES_ORDER_SRV.DeliverableF4"
+	},
+	"Deliverable": "07",
+	"DeliverableText": "Architecture Project"	
+},
+{
+	"__metadata": {
+		"id": "DeliverableF4Set('08')",
+		"uri": "DeliverableF4Set('08')",
+		"type": "API_SALES_ORDER_SRV.DeliverableF4"
+	},
+	"Deliverable": "08",
+	"DeliverableText": "Deliverable"	
+}
+]

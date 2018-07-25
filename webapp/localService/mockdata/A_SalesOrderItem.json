@@ -1,0 +1,129 @@
+[{
+	"__metadata": {
+		"uri": "A_SalesOrderItem(SalesOrder='4000000001',SalesOrderItem='10')",
+		"type": "API_SALES_ORDER_SRV.A_SalesOrderItemType"
+	},
+	"SalesOrder": "4000000001",
+	"SalesOrderItem": "10",
+	"SalesOrderItemText": "Test Material 01",
+	"Deliverable": "01",
+	"DeliverableText": "License",
+	"Contracted": true,	
+	"Value": 1200,
+	"Currency": "GBP",
+	"BillingType": "03",
+	"BillingTypeText": "Ad Hoc",
+	"RevRecType": "02",
+	"RevRecTypeText": "Cost Based POC",
+	"ProfitCenter": "OZPM",
+	"ProfitCenterText": "Profit Center X",
+	"ValidFrom": "/Date(1530399600000)/",
+	"ValidTo": "/Date(1531954800000)/",
+	"TriggerFrom": "/Date(1531954800000)/",
+	"TriggerTo": "/Date(1531782000000)/",
+	"SSP": 1122,
+	"ProjectWbs": "SF-000012",
+	"PoNumber": "5000000001",
+	"PoItem": "10",
+	"to_SalesOrder": {
+		"__deferred": {
+			"uri": "A_SalesOrderItem(SalesOrder='4000000001',SalesOrderItem='10')/to_SalesOrder"
+		}
+	}	
+}, {
+	"__metadata": {
+		"uri": "A_SalesOrderItem(SalesOrder='4000000001',SalesOrderItem='20')",
+		"type": "API_SALES_ORDER_SRV.A_SalesOrderItemType"
+	},
+	"SalesOrder": "4000000001",
+	"SalesOrderItem": "20",
+	"SalesOrderItemText": "Test Material 02",
+	"Deliverable": "01",
+	"DeliverableText": "License",
+	"Contracted": true,	
+	"Value": 1200,
+	"Currency": "GBP",
+	"BillingType": "03",
+	"BillingTypeText": "Ad Hoc",
+	"RevRecType": "02",
+	"RevRecTypeText": "Cost Based POC",
+	"ProfitCenter": "OZPM",
+	"ProfitCenterText": "Profit Center X",
+	"ValidFrom": "/Date(1530399600000)/",
+	"ValidTo": "/Date(1531954800000)/",
+	"TriggerFrom": "/Date(1531954800000)/",
+	"TriggerTo": "/Date(1531782000000)/",
+	"SSP": 1122,
+	"ProjectWbs": "SF-000012",
+	"PoNumber": "5000000001",
+	"PoItem": "10",
+	"to_SalesOrder": {
+		"__deferred": {
+			"uri": "A_SalesOrderItem(SalesOrder='4000000001',SalesOrderItem='10')/to_SalesOrder"
+		}
+	}	
+}, {	
+	"__metadata": {
+		"uri": "A_SalesOrderItem(SalesOrder='4000000001',SalesOrderItem='30')",
+		"type": "API_SALES_ORDER_SRV.A_SalesOrderItemType"
+	},
+	"SalesOrder": "4000000001",
+	"SalesOrderItem": "30",
+	"SalesOrderItemText": "Test Material 03",
+	"Deliverable": "01",
+	"DeliverableText": "License",
+	"Contracted": true,	
+	"Value": 1200,
+	"Currency": "GBP",
+	"BillingType": "03",
+	"BillingTypeText": "Ad Hoc",
+	"RevRecType": "02",
+	"RevRecTypeText": "Cost Based POC",
+	"ProfitCenter": "OZPM",
+	"ProfitCenterText": "Profit Center X",
+	"ValidFrom": "/Date(1530399600000)/",
+	"ValidTo": "/Date(1531954800000)/",
+	"TriggerFrom": "/Date(1531954800000)/",
+	"TriggerTo": "/Date(1531782000000)/",
+	"SSP": 1122,
+	"ProjectWbs": "SF-000012",
+	"PoNumber": "5000000001",
+	"PoItem": "10",
+	"to_SalesOrder": {
+		"__deferred": {
+			"uri": "A_SalesOrderItem(SalesOrder='4000000001',SalesOrderItem='10')/to_SalesOrder"
+		}
+	}	
+}, {		
+	"__metadata": {
+		"uri": "A_SalesOrderItem(SalesOrder='4000000002',SalesOrderItem='10')",
+		"type": "API_SALES_ORDER_SRV.A_SalesOrderItemType"
+	},
+	"SalesOrder": "4000000002",
+	"SalesOrderItem": "10",
+	"SalesOrderItemText": "Test Material 02",
+	"Deliverable": "03",
+	"DeliverableText": "Service",
+	"Contracted": false,	
+	"Value": 34512,
+	"Currency": "GBP",
+	"BillingType": "04",
+	"BillingTypeText": "Scheduled",
+	"RevRecType": "04",
+	"RevRecTypeText": "Milestone POC",
+	"ProfitCenter": "SIPP",
+	"ProfitCenterText": "Profit Center Z",
+	"ValidFrom": "/Date(1531004400000)/",
+	"ValidTo": "/Date(1531954800000)/",
+	"TriggerFrom": "/Date(1531954800000)/",
+	"TriggerTo": "/Date(1531954800000)/",
+	"SSP": 3412,
+	"ProjectWbs": "CT-000012",
+	"PoNumber": "5000000002",
+	"PoItem": "10",
+	"to_SalesOrder": {
+		"__deferred": {
+			"uri": "A_SalesOrderItem(SalesOrder='4000000001',SalesOrderItem='10')/to_SalesOrder"
+		}
+	}	
+}]

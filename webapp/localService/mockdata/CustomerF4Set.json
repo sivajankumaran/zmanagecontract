@@ -1,0 +1,56 @@
+[{
+	"__metadata": {
+		"id": "CustomerF4Set('8000000053')",
+		"uri": "CustomerF4Set('8000000053')",
+		"type": "API_SALES_ORDER_SRV.CustomerF4"
+	},
+	"SoldToParty": "8000000053",
+	"SoldToPartyText": "Civil Nuclear Constabulary",
+	"SalesOrganization": "0123",
+	"SalesOrganizationText": "Capita Secure InfoSol Ltd",
+	"TelephoneNumber": "00442085040908",
+	"Url": "https://www.civilnuclearconst.co.uk",
+	"Email": "info@civilnuclearconst.co.uk" 
+},
+{
+	"__metadata": {
+		"id": "('0022100004')",
+		"uri": "CustomerF4Set('0022100004')",
+		"type": "API_SALES_ORDER_SRV.CustomerF4"
+	},
+	"SoldToParty": "0022100004",
+	"SoldToPartyText": "Ringdove Properties Ltd",
+	"SalesOrganization": "0012",
+	"SalesOrganizationText": "Capita Prop & Infra Ltd",
+	"TelephoneNumber": "00442075671234",
+	"Url": "https://www.ringdove.co.uk",
+	"Email": "info@ringdoveproperties.co.uk" 	
+},
+{
+	"__metadata": {
+		"id": "CustomerF4Set('0010100008')",
+		"uri": "CustomerF4Set('0010100008')",
+		"type": "API_SALES_ORDER_SRV.CustomerF4"
+	},
+	"SoldToParty": "0010100008",
+	"SoldToPartyText": "O2",
+	"SalesOrganization": "0146",
+	"SalesOrganizationText": "Capita Customer Mgmt Ltd",
+	"TelephoneNumber": "00442034651298",
+	"Url": "https://www.capita.co.uk",
+	"Email": "info@O2.co.uk" 	
+},
+{
+	"__metadata": {
+		"id": "CustomerF4Set('8000000084')",
+		"uri": "CustomerF4Set('8000000084')",
+		"type": "API_SALES_ORDER_SRV.CustomerF4"
+	},
+	"SoldToParty": "8000000084",
+	"SoldToPartyText": "Capita Customer Mgmt Ltd - OZPM",
+	"SalesOrganization": "0123",
+	"SalesOrganizationText": "Capita Secure InfoSol Ltd",
+	"TelephoneNumber": "00442013269234",
+	"Url": "https://www.capita.co.uk",
+	"Email": "info@ozpm.co.uk" 		
+}]

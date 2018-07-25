@@ -1,0 +1,33 @@
+[{
+	"__metadata": {
+		"id": "FrameworkF4Set('01')",
+		"uri": "FrameworkF4Set('01')",
+		"type": "API_SALES_ORDER_SRV.FrameworkF4"
+	},
+	"Framework": "01",
+	"FrameworkText": "Framework Value 1"
+}, {
+	"__metadata": {
+		"id": "FrameworkF4Set('02')",
+		"uri": "FrameworkF4Set('02')",
+		"type": "API_SALES_ORDER_SRV.FrameworkF4"
+	},
+	"Framework": "02",
+	"FrameworkText": "Framework Value 2"
+}, {
+	"__metadata": {
+		"id": "FrameworkF4Set('03')",
+		"uri": "FrameworkF4Set('03')",
+		"type": "API_SALES_ORDER_SRV.FrameworkF4"
+	},
+	"Framework": "03",
+	"FrameworkText": "Framework Value 3"
+}, {
+	"__metadata": {
+		"id": "FrameworkF4Set('04')",
+		"uri": "FrameworkF4Set('04')",
+		"type": "API_SALES_ORDER_SRV.FrameworkF4"
+	},
+	"Framework": "04",
+	"FrameworkText": "Framework Value 4"
+}]

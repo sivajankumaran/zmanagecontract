@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+   <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='S17CLNT100')/$value">
+      <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+   </edmx:Reference>
+   <edmx:DataServices m:DataServiceVersion="2.0">
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="API_SALES_ORDER_SRV" xml:lang="en" sap:schema-version="1">
+         <EntityType Name="A_SalesOrderType" sap:searchable="true" sap:label="Sales Order (API)" sap:content-version="1">
+            <Key>
+               <PropertyRef Name="SalesOrder" />
+            </Key>
+            <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="SalesOrderText" sap:label="Sales Contract" sap:updatable="true"/>
+            <Property Name="SalesOrderText" Type="Edm.String" MaxLength="40" sap:label="Sales Order Text" sap:quickinfo="Short Text for Sales Order" sap:updatable="true"/>  
+			<Property Name="ValidFrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Valid From" sap:filter-restriction="interval" sap:updatable="true"/>            
+			<Property Name="ValidTo" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To" sap:filter-restriction="single-value" sap:updatable="true"/>
+			<Property Name="OrderLoggingValue" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="TransactionCurrency" sap:label="Order Logging Value" sap:quickinfo="Order Logging Value" sap:updatable="true"/>
+			<Property Name="TotalContractedValue" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="TransactionCurrency" sap:label="Total Contracted Value" sap:quickinfo="Total Contracted Value" sap:updatable="false" sap:creatable="false"/>
+            <Property Name="TotalUncontractedValue" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="TransactionCurrency" sap:label="Total Uncontracted Value" sap:quickinfo="Total Uncontracted Value" sap:updatable="false" sap:creatable="false"/>
+            <Property Name="TransactionCurrency" Type="Edm.String" MaxLength="5" sap:label="Billing currency" sap:quickinfo="Billing currency" sap:semantics="currency-code" sap:updatable="true"/>
+            <Property Name="Progress" Type="Edm.Decimal" Precision="16" Scale="2" sap:label="Progress" sap:quickinfo="Progress" sap:updatable="false" sap:creatable="false" sap:semantics="percent-complete"/>
+            <Property Name="ProgressCriticality" Type="Edm.String" sap:label="Progress Criticality" sap:quickinfo="Progress Criticality" sap:updatable="false" sap:creatable="false"/>            
+            <Property Name="MasterContract" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:text="to_MasterContract/MasterContractText" sap:label="Master Contract" sap:updatable="true"/>   
+            <Property Name="Framework" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="to_Framework/FrameworkText" sap:label="Framework" sap:updatable="true"/>  
+            <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on" sap:quickinfo="Date on which the record was created" sap:updatable="true"/>
+            <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="Name of Person Responsible for Creating the Object" sap:updatable="true"/>
+            <Property Name="LastChangeDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On" sap:quickinfo="Date of Last Change" sap:updatable="true"/>
+            <Property Name="SalesOrderType" Type="Edm.String" MaxLength="4" sap:text="to_DocumentType/SalesOrderTypeText" sap:display-format="UpperCase" sap:label="Sales Contract Type" sap:quickinfo="Sales Contract Type" sap:updatable="true"/>
+            <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="to_SalesOrg/SalesOrganizationText" sap:label="Sales Organization" sap:updatable="true"/>
+            <Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Customer" sap:text="to_SoldToParty/SoldToPartyText" sap:updatable="true"/>
+			<Property Name="Deleteable" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Deleteable" sap:updatable="true"/>
+			<Property Name="Editable" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Editable" sap:updatable="true"/>	    
+			<Property Name="LockImageUrl" Type="Edm.String" sap:display-format="UpperCase" sap:label="Locked/Unlocked" sap:updatable="true"/>	
+			<Property Name="Locked" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Locked" sap:updatable="true"/>	  
+            <NavigationProperty Name="to_Item" Relationship="API_SALES_ORDER_SRV.assoc_salesorder_to_salesorderitem" FromRole="FromRole_assoc_salesorder_to_salesorderitem" ToRole="ToRole_assoc_salesorder_to_salesorderitem">
+            	<ReferentialConstraint Property="SalesOrder" ReferencedProperty="SalesOrder" />
+            </NavigationProperty>	
+            <NavigationProperty Name="to_DocumentType" Relationship="API_SALES_ORDER_SRV.assoc_salesorder_to_documenttype" FromRole="FromRole_assoc_salesorder_to_documenttype" ToRole="ToRole_assoc_salesorder_to_documenttype">
+            	<ReferentialConstraint Property="SalesOrderType" ReferencedProperty="SalesOrderType" />
+            </NavigationProperty>
+            <NavigationProperty Name="to_SalesOrg" Relationship="API_SALES_ORDER_SRV.assoc_salesorder_to_salesorg" FromRole="FromRole_assoc_salesorder_to_salesorg" ToRole="ToRole_assoc_salesorder_to_salesorg">
+            	<ReferentialConstraint Property="SalesOrganization" ReferencedProperty="SalesOrganization" />
+            </NavigationProperty>   
+            <NavigationProperty Name="to_MasterContract" Relationship="API_SALES_ORDER_SRV.assoc_salesorder_to_mastercontract" FromRole="FromRole_assoc_salesorder_to_mastercontract" ToRole="ToRole_assoc_salesorder_to_mastercontract">
+            	<ReferentialConstraint Property="MasterContract" ReferencedProperty="MasterContract" />
+            </NavigationProperty>  
+            <NavigationProperty Name="to_Framework" Relationship="API_SALES_ORDER_SRV.assoc_salesorder_to_framework" FromRole="FromRole_assoc_salesorder_to_framework" ToRole="ToRole_assoc_salesorder_to_framework">
+            	<ReferentialConstraint Property="Framework" ReferencedProperty="Framework" />
+            </NavigationProperty>  
+            <NavigationProperty Name="to_SoldToParty" Relationship="API_SALES_ORDER_SRV.assoc_salesorder_to_soldtoparty" FromRole="FromRole_assoc_salesorder_to_soldtoparty" ToRole="ToRole_assoc_salesorder_to_soldtoparty">
+            	<ReferentialConstraint Property="SoldToParty" ReferencedProperty="SoldToParty" />
+            </NavigationProperty>              
+         </EntityType>
+         <EntityType Name="A_SalesOrderItemType" sap:label="Sales Order Item (API)" sap:content-version="1">
+            <Key>
+               <PropertyRef Name="SalesOrder" />
+               <PropertyRef Name="SalesOrderItem" />
+            </Key>
+            <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Sales Order" sap:updatable="false"/>
+            <Property Name="SalesOrderItem" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:text="SalesOrderItemText" sap:label="Sales Order Item" sap:updatable="false"/>    
+            <Property Name="SalesOrderItemText" Type="Edm.String" MaxLength="40" sap:label="Item Text" sap:quickinfo="Short Text for Sales Order Item" sap:updatable="false"/>            
+            <Property Name="Deliverable" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Deliverable" sap:text="DeliverableText" sap:updatable="false"/>
+            <Property Name="DeliverableText" Type="Edm.String"  sap:display-format="UpperCase" sap:label="Deliverable Text" sap:updatable="false"/>            
+			<Property Name="Contracted" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Contracted" sap:updatable="false"/>	
+			<Property Name="Value" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Value" sap:quickinfo="Value" sap:updatable="false"/>
+			<Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="Currency" sap:semantics="currency-code" sap:updatable="false"/>
+			<Property Name="BillingType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Billing Type" sap:text="BillingTypeText" sap:updatable="false"/>
+            <Property Name="BillingTypeText" Type="Edm.String"  sap:display-format="UpperCase" sap:label="Billing Type Text" sap:updatable="false"/>            
+			<Property Name="RevRecType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Revenue Recognition Type" sap:text="RevRecTypeText" sap:updatable="false"/>
+            <Property Name="RevRecTypeText" Type="Edm.String" sap:display-format="UpperCase" sap:label="Revenue Recognition Type Text" sap:updatable="false"/>            
+			<Property Name="ProfitCenter" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Profit Center" sap:text="ProfitCenterText" sap:updatable="false"/>
+            <Property Name="ProfitCenterText" Type="Edm.String" sap:display-format="UpperCase" sap:label="Profit Center Text" sap:updatable="false"/>            
+			<Property Name="ValidFrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Valid From" sap:filter-restriction="interval" sap:updatable="false"/>            
+			<Property Name="ValidTo" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To" sap:filter-restriction="interval" sap:updatable="false"/>
+			<Property Name="TriggerFrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Trigger From" sap:filter-restriction="interval" sap:updatable="false"/>            
+			<Property Name="TriggerTo" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Trigger To" sap:filter-restriction="interval" sap:updatable="false"/>
+			<Property Name="SSP" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Value" sap:quickinfo="SSP" sap:updatable="false"/>
+			<Property Name="ProjectWbs" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="WBS Element" sap:updatable="false"/>
+			<Property Name="PoNumber" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="PO Number" sap:updatable="false"/>     
+			<Property Name="PoItem" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="PO Item" sap:updatable="false"/>   
+			<NavigationProperty Name="to_SalesOrder" Relationship="API_SALES_ORDER_SRV.assoc_salesorderitem_to_salesorder" FromRole="FromRole_assoc_salesorderitem_to_salesorder" ToRole="ToRole_assoc_salesorderitem_to_salesorder">
+            	<ReferentialConstraint Property="SalesOrder" ReferencedProperty="SalesOrder" />
+            </NavigationProperty>         
+         </EntityType>
+		 <EntityType Name="MasterContractF4" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MasterContract" />
+				</Key>
+				<Property Name="MasterContract" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Master Contract" sap:text="MasterContractText" />
+				<Property Name="MasterContractText" Type="Edm.String" sap:label="Master Contract Text" />
+		 </EntityType>  
+		 <EntityType Name="FrameworkF4" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Framework" />
+				</Key>
+				<Property Name="Framework" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Framework" sap:text="FrameworkText" />
+				<Property Name="FrameworkText" Type="Edm.String" sap:label="Framework Text" />
+		 </EntityType>  		 
+		 <EntityType Name="DocumentTypeF4" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="SalesOrderType" />
+				</Key>
+				<Property Name="SalesOrderType" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Type" sap:text="SalesOrderTypeText" />
+				<Property Name="SalesOrderTypeText" Type="Edm.String" sap:label="Document Type Text" />
+		 </EntityType>  
+		 <EntityType Name="RevRecTypeF4" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="RevRecType" />
+				</Key>
+				<Property Name="RevRecType" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Revenue Recognition Type" sap:text="RevRecTypeText" />
+				<Property Name="RevRecTypeText" Type="Edm.String" sap:label="Revenue Recognition Type Text" />
+		 </EntityType> 
+		 <EntityType Name="ProfitCenterF4" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="RevRecType" />
+				</Key>
+				<Property Name="ProfitCenter" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Profit Center" sap:text="ProfitCenterText" />
+				<Property Name="ProfitCenterText" Type="Edm.String" sap:label="Profit Center Text" />
+		 </EntityType>  		 
+		 <EntityType Name="BillingTypeF4" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BillingType" />
+				</Key>
+				<Property Name="BillingType" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Billing Type" sap:text="BillingTypeText" />
+				<Property Name="BillingTypeText" Type="Edm.String" sap:label="Billing Type Text" />
+		 </EntityType>  		 
+		 <EntityType Name="DeliverableF4" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Deliverable" />
+				</Key>
+				<Property Name="Deliverable" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Deliverable" sap:text="DeliverableText" />
+				<Property Name="DeliverableText" Type="Edm.String" sap:label="Deliverable Text" />
+		 </EntityType>  		 
+		 <EntityType Name="SalesOrgF4" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="SalesOrganization" />
+				</Key>
+				<Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Sales Organisation" sap:text="SalesOrganizationText" />
+				<Property Name="SalesOrganizationText" Type="Edm.String" sap:label="Sales Organisation Text" />
+		 </EntityType>  
+		 <EntityType Name="CustomerF4" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="SoldToParty" />
+				</Key>
+				<Property Name="SoldToParty" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Customer" sap:text="SoldToPartyText" />
+				<Property Name="SoldToPartyText" Type="Edm.String" sap:label="Customer Text" />
+				<Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Sales Org" sap:text="SalesOrganizationText" />
+				<Property Name="SalesOrganizationText" Type="Edm.String" sap:label="Sales Org Text" />	
+				<Property Name="TelephoneNumber" Type="Edm.String" sap:display-format="UpperCase" sap:label="Telephone" sap:updatable="false"/>   
+				<Property Name="Url" Type="Edm.String" sap:display-format="UpperCase" sap:label="Url" sap:updatable="false"/>   
+				<Property Name="Email" Type="Edm.String" sap:display-format="UpperCase" sap:label="Email" sap:updatable="false"/>   
+		 </EntityType>           
+         <Association Name="assoc_salesorder_to_salesorderitem" sap:content-version="1">
+            <End Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1" Role="FromRole_assoc_salesorder_to_salesorderitem" />
+            <End Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="*" Role="ToRole_assoc_salesorder_to_salesorderitem" />
+			<ReferentialConstraint>
+				<Principal Role="FromRole_assoc_salesorder_to_salesorderitem">
+					<PropertyRef Name="SalesOrder"/>	
+				</Principal>
+				<Dependent Role="ToRole_assoc_salesorder_to_salesorderitem">
+					<PropertyRef Name="SalesOrder"/>
+				</Dependent>
+			</ReferentialConstraint>            
+         </Association>
+         <Association Name="assoc_salesorder_to_documenttype" sap:content-version="1">
+            <End Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1" Role="FromRole_assoc_salesorder_to_documenttype" />
+            <End Type="API_SALES_ORDER_SRV.DocumentTypeF4" Multiplicity="1" Role="ToRole_assoc_salesorder_to_documenttype" />
+			<ReferentialConstraint>
+				<Principal Role="FromRole_assoc_salesorder_to_documenttype">
+					<PropertyRef Name="SalesOrderType"/>	
+				</Principal>
+				<Dependent Role="ToRole_assoc_salesorder_to_documenttype">
+					<PropertyRef Name="SalesOrderType"/>
+				</Dependent>
+			</ReferentialConstraint>            
+         </Association>   
+         <Association Name="assoc_salesorder_to_mastercontract" sap:content-version="1">
+            <End Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1" Role="FromRole_assoc_salesorder_to_mastercontract" />
+            <End Type="API_SALES_ORDER_SRV.MasterContractF4" Multiplicity="1" Role="ToRole_assoc_salesorder_to_mastercontract" />
+			<ReferentialConstraint>
+				<Principal Role="FromRole_assoc_salesorder_to_mastercontract">
+					<PropertyRef Name="MasterContract"/>	
+				</Principal>
+				<Dependent Role="ToRole_assoc_salesorder_to_mastercontract">
+					<PropertyRef Name="MasterContract"/>
+				</Dependent>
+			</ReferentialConstraint>            
+         </Association>        
+         <Association Name="assoc_salesorder_to_framework" sap:content-version="1">
+            <End Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1" Role="FromRole_assoc_salesorder_to_framework" />
+            <End Type="API_SALES_ORDER_SRV.FrameworkF4" Multiplicity="1" Role="ToRole_assoc_salesorder_to_framework" />
+			<ReferentialConstraint>
+				<Principal Role="FromRole_assoc_salesorder_to_framework">
+					<PropertyRef Name="Framework"/>	
+				</Principal>
+				<Dependent Role="ToRole_assoc_salesorder_to_framework">
+					<PropertyRef Name="Framework"/>
+				</Dependent>
+			</ReferentialConstraint>            
+         </Association>            
+         <Association Name="assoc_salesorder_to_salesorg" sap:content-version="1">
+            <End Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1" Role="FromRole_assoc_salesorder_to_salesorg" />
+            <End Type="API_SALES_ORDER_SRV.SalesOrgF4" Multiplicity="1" Role="ToRole_assoc_salesorder_to_salesorg" />
+			<ReferentialConstraint>
+				<Principal Role="FromRole_assoc_salesorder_to_salesorg">
+					<PropertyRef Name="SalesOrganization"/>	
+				</Principal>
+				<Dependent Role="ToRole_assoc_salesorder_to_salesorg">
+					<PropertyRef Name="SalesOrganization"/>
+				</Dependent>
+			</ReferentialConstraint>            
+         </Association>      
+         <Association Name="assoc_salesorder_to_soldtoparty" sap:content-version="1">
+            <End Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1" Role="FromRole_assoc_salesorder_to_soldtoparty" />
+            <End Type="API_SALES_ORDER_SRV.CustomerF4" Multiplicity="1" Role="ToRole_assoc_salesorder_to_soldtoparty" />
+			<ReferentialConstraint>
+				<Principal Role="FromRole_assoc_salesorder_to_soldtoparty">
+					<PropertyRef Name="SoldToParty"/>	
+				</Principal>
+				<Dependent Role="ToRole_assoc_salesorder_to_soldtoparty">
+					<PropertyRef Name="SoldToParty"/>
+				</Dependent>
+			</ReferentialConstraint>            
+         </Association>            
+         <Association Name="assoc_salesorderitem_to_salesorder" sap:content-version="1">
+            <End Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="1" Role="FromRole_assoc_salesorderitem_to_salesorder" />
+            <End Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1" Role="ToRole_assoc_salesorderitem_to_salesorder" />
+			<ReferentialConstraint>
+				<Principal Role="FromRole_assoc_salesorderitem_to_salesorder">
+					<PropertyRef Name="SalesOrder"/>	
+				</Principal>
+				<Dependent Role="ToRole_assoc_salesorderitem_to_salesorder">
+					<PropertyRef Name="SalesOrder"/>
+				</Dependent>
+			</ReferentialConstraint>                 
+         </Association>
+         <EntityContainer Name="API_SALES_ORDER_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+			<EntitySet Name="FrameworkF4Set" EntityType="API_SALES_ORDER_SRV.FrameworkF4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" sap:countable="true" /> 
+			<EntitySet Name="MasterContractF4Set" EntityType="API_SALES_ORDER_SRV.MasterContractF4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" sap:countable="true" /> 			
+			<EntitySet Name="DocumentTypeF4Set" EntityType="API_SALES_ORDER_SRV.DocumentTypeF4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" sap:countable="true" /> 
+			<EntitySet Name="DeliverableF4Set" EntityType="API_SALES_ORDER_SRV.DeliverableF4" sap:creatable="false" sap:updatable="true" sap:deletable="false" sap:content-version="1" sap:countable="true" /> 			
+			<EntitySet Name="SalesOrgF4Set" EntityType="API_SALES_ORDER_SRV.SalesOrgF4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" sap:countable="true" /> 	
+			<EntitySet Name="CustomerF4Set" EntityType="API_SALES_ORDER_SRV.CustomerF4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" sap:countable="true" /> 				
+			<EntitySet Name="BillingTypeF4Set" EntityType="API_SALES_ORDER_SRV.BillingTypeF4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" sap:countable="true" />
+			<EntitySet Name="ProfitCenterF4Set" EntityType="API_SALES_ORDER_SRV.ProfitCenterF4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" sap:countable="true" />
+			<EntitySet Name="RevRecTypeF4Set" EntityType="API_SALES_ORDER_SRV.RevRecTypeF4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" sap:countable="true" />
+            <EntitySet Name="A_SalesOrder" EntityType="API_SALES_ORDER_SRV.A_SalesOrderType" sap:creatable="true" sap:updatable="true" sap:content-version="1" sap:searchable="true" />
+            <EntitySet Name="A_SalesOrderItem" EntityType="API_SALES_ORDER_SRV.A_SalesOrderItemType" sap:updatable="true" sap:deletable="true" sap:createable="true" sap:content-version="1" />
+            <AssociationSet Name="assoc_salesorderitem_to_salesorder" Association="API_SALES_ORDER_SRV.assoc_salesorderitem_to_salesorder" sap:content-version="1">
+               <End EntitySet="A_SalesOrderItem" Role="FromRole_assoc_salesorderitem_to_salesorder" />
+               <End EntitySet="A_SalesOrder" Role="ToRole_assoc_salesorderitem_to_salesorder" />
+            </AssociationSet>
+            <AssociationSet Name="assoc_salesorder_to_salesorderitem" Association="API_SALES_ORDER_SRV.assoc_salesorder_to_salesorderitem" sap:content-version="1">
+               <End EntitySet="A_SalesOrder" Role="FromRole_assoc_salesorder_to_salesorderitem" />
+               <End EntitySet="A_SalesOrderItem" Role="ToRole_assoc_salesorder_to_salesorderitem" />
+            </AssociationSet>
+             <AssociationSet Name="assoc_salesorder_to_documenttype" Association="API_SALES_ORDER_SRV.assoc_salesorder_to_documenttype" sap:content-version="1">
+               <End EntitySet="A_SalesOrder" Role="FromRole_assoc_salesorder_to_documenttype" />
+               <End EntitySet="DocumentTypeF4Set" Role="ToRole_assoc_salesorder_to_documenttype" />
+            </AssociationSet>     
+             <AssociationSet Name="assoc_salesorder_to_salesorg" Association="API_SALES_ORDER_SRV.assoc_salesorder_to_salesorg" sap:content-version="1">
+               <End EntitySet="A_SalesOrder" Role="FromRole_assoc_salesorder_to_salesorg" />
+               <End EntitySet="SalesOrgF4Set" Role="ToRole_assoc_salesorder_to_salesorg" />
+            </AssociationSet>  
+             <AssociationSet Name="assoc_salesorder_to_mastercontract" Association="API_SALES_ORDER_SRV.assoc_salesorder_to_mastercontract" sap:content-version="1">
+               <End EntitySet="A_SalesOrder" Role="FromRole_assoc_salesorder_to_mastercontract" />
+               <End EntitySet="MasterContractF4Set" Role="ToRole_assoc_salesorder_to_mastercontract" />
+            </AssociationSet>  
+             <AssociationSet Name="assoc_salesorder_to_soldtoparty" Association="API_SALES_ORDER_SRV.assoc_salesorder_to_soldtoparty" sap:content-version="1">
+               <End EntitySet="A_SalesOrder" Role="FromRole_assoc_salesorder_to_soldtoparty" />
+               <End EntitySet="CustomerF4Set" Role="ToRole_assoc_salesorder_to_soldtoparty" />
+            </AssociationSet>              
+             <AssociationSet Name="assoc_salesorder_to_framework" Association="API_SALES_ORDER_SRV.assoc_salesorder_to_framework" sap:content-version="1">
+               <End EntitySet="A_SalesOrder" Role="FromRole_assoc_salesorder_to_framework" />
+               <End EntitySet="FrameworkF4Set" Role="ToRole_assoc_salesorder_to_framework" />
+            </AssociationSet>              
+         </EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/SalesOrderType">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Document Types" />
+						<PropertyValue Property="CollectionPath" String="DocumentTypeF4Set" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SalesOrderType" />
+									<PropertyValue Property="ValueListProperty" String="SalesOrderType" />
+								</Record>
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="SalesOrderTypeText" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueListWithFixedValues" Bool="true"/>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderItemType/Deliverable">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Deliverables" />
+						<PropertyValue Property="CollectionPath" String="DeliverableF4Set" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Deliverable" />
+									<PropertyValue Property="ValueListProperty" String="Deliverable" />
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="DeliverableText" />
+									<PropertyValue Property="ValueListProperty" String="DeliverableText" />
+								</Record>	
+								<!--
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="DeliverableText" />
+								</Record>
+								-->
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueListWithFixedValues" Bool="true"/>
+			</Annotations>	
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderItemType/BillingType">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Billing Type" />
+						<PropertyValue Property="CollectionPath" String="BillingTypeF4Set" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BillingType" />
+									<PropertyValue Property="ValueListProperty" String="BillingType" />
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BillingTypeText" />
+									<PropertyValue Property="ValueListProperty" String="BillingTypeText" />
+								</Record>	
+								<!--
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="BillingTypeText" />
+								</Record>
+								-->
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueListWithFixedValues" Bool="true"/>
+			</Annotations>	
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderItemType/RevRecType">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Billing Type" />
+						<PropertyValue Property="CollectionPath" String="RevRecTypeF4Set" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="RevRecType" />
+									<PropertyValue Property="ValueListProperty" String="RevRecType" />
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="RevRecTypeText" />
+									<PropertyValue Property="ValueListProperty" String="RevRecTypeText" />
+								</Record>									
+								<!--
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="RevRecTypeText" />
+								</Record>
+								-->
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueListWithFixedValues" Bool="true"/>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderItemType/ProfitCenter">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Profit Center" />
+						<PropertyValue Property="CollectionPath" String="ProfitCenterF4Set" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="ProfitCenter" />
+									<PropertyValue Property="ValueListProperty" String="ProfitCenter" />
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="ProfitCenterText" />
+									<PropertyValue Property="ValueListProperty" String="ProfitCenterText" />
+								</Record>									
+								<!--
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="ProfitCenterText" />
+								</Record>
+								-->
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueListWithFixedValues" Bool="true"/>
+			</Annotations>			
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/MasterContract">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Master Contract" />
+						<PropertyValue Property="CollectionPath" String="MasterContractF4Set" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="MasterContract" />
+									<PropertyValue Property="ValueListProperty" String="MasterContract" />
+								</Record>
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="MasterContractText" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueListWithFixedValues" Bool="true"/>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/Framework">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Framework" />
+						<PropertyValue Property="CollectionPath" String="FrameworkF4Set" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Framework" />
+									<PropertyValue Property="ValueListProperty" String="Framework" />
+								</Record>
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="FrameworkText" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueListWithFixedValues" Bool="true"/>				
+			</Annotations>			
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/SalesOrganization">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Sales Organisations" />
+						<PropertyValue Property="CollectionPath" String="SalesOrgF4Set" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SalesOrganization" />
+									<PropertyValue Property="ValueListProperty" String="SalesOrganization" />
+								</Record>
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="SalesOrganizationText" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/SoldToParty">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Customers" />
+						<PropertyValue Property="CollectionPath" String="CustomerF4Set" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SoldToParty" />
+									<PropertyValue Property="ValueListProperty" String="SoldToParty" />
+								</Record>
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="SoldToPartyText" />
+								</Record>
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="SalesOrganization" />
+								</Record>		
+								<Record	Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="SalesOrganizationText" />
+								</Record>								
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+	        <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/SalesOrganization">
+	            <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
+	        </Annotations>	
+	        <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/SalesOrderType">
+	            <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
+	        </Annotations>		 
+	        <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/ValidTo">
+	            <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
+	        </Annotations>	
+	        <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/ValidFrom">
+	            <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
+	        </Annotations>	
+	        <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/LockImageUrl">
+				<Annotation Term="UI.IsImageUrl" />
+				<Annotation Term="UI.Hidden" />				
+	        </Annotations>	
+	        <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.A_SalesOrderType/Locked">
+				<Annotation Term="UI.Hidden" />				
+	        </Annotations>		        
+	        <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.API_SALES_ORDER_SRV_Entities/A_SalesOrder">
+			    <Annotation Term="Org.OData.Capabilities.V1.DeleteRestrictions">
+			        <Record>
+			            <PropertyValue Property="Deletable" Path="Deleteable"/>
+			        </Record>
+			    </Annotation>
+			    <Annotation Term="Org.OData.Capabilities.V1.UpdateRestrictions">
+			        <Record>
+			            <PropertyValue Property="Updatable" Path="Editable"/>
+			        </Record>
+			    </Annotation>			    
+	        </Annotations>	
+			<!-- <Annotations Target="API_SALES_ORDER_SRV.SalesOrderType">
+	            <Annotation Term="com.sap.vocabularies.Common.v1.SideEffects">
+	               <Record>
+	                  <PropertyValue Property="SourceEntities">
+	                     <Collection>
+	                        <NavigationPropertyPath>to_DocumentType</NavigationPropertyPath>
+	                        <NavigationPropertyPath>to_SalesOrg</NavigationPropertyPath>
+	                        <NavigationPropertyPath />
+	                     </Collection>
+	                  </PropertyValue>
+	                  <PropertyValue EnumMember="ValueChange" Property="EffectTypes" />
+	               </Record>
+	            </Annotation>				
+				<Annotation Term="com.sap.vocabularies.Common.v1.SideEffects" Qualifier="SalesOrderTypeChanged">
+					<Record>
+						<PropertyValue Property="SourceProperties">
+							<Collection>
+								<PropertyPath>SalesOrderType</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="TargetEntities">
+							<Collection>
+								<NavigationPropertyPath>to_DocumentType</NavigationPropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="EffectTypes" EnumMember="ValueChange" />
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.Common.v1.SideEffects" Qualifier="SalesOrganizationChanged">
+					<Record>
+						<PropertyValue Property="SourceProperties">
+							<Collection>
+								<PropertyPath>SalesOrganization</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="TargetEntities">
+							<Collection>
+								<NavigationPropertyPath>to_SalesOrg</NavigationPropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="EffectTypes" EnumMember="ValueChange" />
+					</Record>
+				</Annotation>				
+			</Annotations>	-->
+         <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/API_SALES_ORDER_SRV/$metadata" />
+         <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/API_SALES_ORDER_SRV/$metadata" />
+      </Schema>
+   </edmx:DataServices>
+</edmx:Edmx>

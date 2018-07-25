@@ -1,0 +1,181 @@
+[{
+	"__metadata": {
+		"uri": "A_SalesOrder('4000000001')",
+		"type": "API_SALES_ORDER_SRV.A_SalesOrderType"
+	},
+	"SalesOrder": "4000000001",
+	"SalesOrderText": "Test Sales Contract",
+	"SoldToParty": "8000000053",
+	"SoldToPartyText": "Civil Nuclear Constabulary",
+	"SalesOrganization": "0123",
+	"SalesOrderType": "02",
+	"ValidFrom": "/Date(1513123200000)/",
+	"ValidTo": "/Date(1639526400000)/",
+	"OrderLoggingValue": "511500",
+	"TotalContractedValue": "1250",
+	"TransactionCurrency": "GBP",
+	"MasterContract": "01",
+	"MasterContractText": "O2",
+	"TotalUncontractedValue": 3456,
+	"Framework": "01",
+	"FrameworkText": "Framework Value 1",
+	"Progress": "80",
+	"ProgressCriticality": "3",
+	"Deleteable":true,
+	"Editable":true,
+	"LockImageUrl": "sap-icon://unlocked",
+	"Locked": false,
+	"to_Item": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000001')/to_Item"
+		}
+	},
+	"to_DocumentType": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000001')/to_DocumentType"
+		}
+	},
+	"to_SalesOrg": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000001')/to_SalesOrg"
+		}
+	},	
+	"to_Framework": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000001')/to_Framework"
+		}
+	},	
+	"to_MasterContract": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000001')/to_MasterContract"
+		}
+	},	
+	"to_SoldToParty": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000001')/to_SoldToParty"
+		}
+	},		
+	"CreationDate": "/Date(1513641600000)/",
+	"CreatedByUser": "Andy Sargent",
+	"LastChangeDate": "/Date(1545350400000)/"
+}, {
+	"__metadata": {
+		"uri": "A_SalesOrder('4000000002')",
+		"type": "API_SALES_ORDER_SRV.A_SalesOrderType"
+	},
+	"SalesOrder": "4000000002",
+	"SalesOrderText": "Project X Sales Contract",
+	"SoldToParty": "0022100004",
+	"SoldToPartyText": "Ringdove Properties Ltd",
+	"SalesOrganization": "0012",
+	"SalesOrderType": "03",
+	"ValidFrom": "/Date(1499122800000)/",
+	"ValidTo": "/Date(1510704000000)/",
+	"OrderLoggingValue": "611500",
+	"TotalContractedValue": "4250",
+	"TransactionCurrency": "GBP",
+	"MasterContract": "02",
+	"MasterContractText": "RPP",
+	"TotalUncontractedValue": 4423,
+	"Framework": "02",
+	"FrameworkText": "Framework Value 2",
+	"Progress": "60",	
+	"ProgressCriticality": "2",	
+	"Deleteable":false,
+	"Editable":false,
+	"LockImageUrl": "sap-icon://locked",
+	"Locked": true,	
+	"to_Item": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000002')/to_Item"
+		}
+	},
+	"to_DocumentType": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000002')/to_DocumentType"
+		}
+	},	
+	"to_SalesOrg": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000002')/to_SalesOrg"
+		}
+	},		
+	"to_Framework": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000002')/to_Framework"
+		}
+	},	
+	"to_MasterContract": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000002')/to_MasterContract"
+		}
+	},
+	"to_SoldToParty": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000002')/to_SoldToParty"
+		}
+	},		
+	"CreationDate": "/Date(1498863600000)/",
+	"CreatedByUser": "Jana Kumaran",
+	"LastChangeDate": "/Date(1532991600000)/"
+}, {
+	"__metadata": {
+		"uri": "A_SalesOrder('4000000003')",
+		"type": "API_SALES_ORDER_SRV.A_SalesOrderType"
+	},
+	"SalesOrder": "4000000003",
+	"SalesOrderText": "Project Y Sales Contract",
+	"SoldToParty": "8000000084",
+	"SoldToPartyText": "Capita Customer Mgmt Ltd - OZPM",
+	"SalesOrganization": "0123",
+	"SalesOrderType": "02",
+	"ValidFrom": "/Date(1360022400000)/",
+	"ValidTo": "/Date(1462834800000)/",
+	"OrderLoggingValue": "185000",
+	"TotalContractedValue": "100000",
+	"TransactionCurrency": "GBP",
+	"MasterContract": "03",
+	"MasterContractText": "Prudential",
+	"TotalUncontractedValue": 9834,
+	"Framework": "03",
+	"FrameworkText": "Framework Value 3",
+	"Progress": "40",
+	"ProgressCriticality": "1",	
+	"Deleteable":true,
+	"Editable":true,
+	"LockImageUrl": "sap-icon://unlocked",
+	"Locked": false,	
+	"to_Item": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000003')/to_Item"
+		}
+	},
+	"to_DocumentType": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000003')/to_DocumentType"
+		}
+	},	
+	"to_SalesOrg": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000003')/to_SalesOrg"
+		}
+	},	
+	"to_Framework": {
+		"__deferred": {
+			"uri": "SalesOrderSet('4000000003')/to_Framework"
+		}
+	},	
+	"to_MasterContract": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000003')/to_MasterContract"
+		}
+	},		
+	"to_SoldToParty": {
+		"__deferred": {
+			"uri": "A_SalesOrder('4000000003')/to_SoldToParty"
+		}
+	},		
+	"CreationDate": "/Date(1334012400000)/",
+	"CreatedByUser": "Mark Rowlands",
+	"LastChangeDate": "/Date(1410735600000)/"
+}]

@@ -1,0 +1,82 @@
+[{
+	"__metadata": {
+		"id": "RevRecTypeF4Set('01')",
+		"uri": "RevRecTypeF4Set('01')",
+		"type": "API_SALES_ORDER_SRV.RevRecTypeF4"
+	},
+	"RevRecType": "01",
+	"RevRecTypeText": "T&M"	
+},
+{
+	"__metadata": {
+		"id": "RevRecTypeF4Set('02')",
+		"uri": "RevRecTypeF4Set('02')",
+		"type": "API_SALES_ORDER_SRV.RevRecTypeF4"
+	},
+	"RevRecType": "02",
+	"RevRecTypeText": "Cost Based POC"	
+},
+{
+	"__metadata": {
+		"id": "RevRecTypeF4Set('03')",
+		"uri": "RevRecTypeF4Set('03')",
+		"type": "API_SALES_ORDER_SRV.RevRecTypeF4"
+	},
+	"RevRecType": "03",
+	"RevRecTypeText": "Quantity POC"	
+},
+{
+	"__metadata": {
+		"id": "RevRecTypeF4Set('04')",
+		"uri": "RevRecTypeF4Set('04')",
+		"type": "API_SALES_ORDER_SRV.RevRecTypeF4"
+	},
+	"RevRecType": "04",
+	"RevRecTypeText": "Milestone POC"	
+},
+{
+	"__metadata": {
+		"id": "RevRecTypeF4Set('05')",
+		"uri": "RevRecTypeF4Set('05')",
+		"type": "API_SALES_ORDER_SRV.RevRecTypeF4"
+	},
+	"RevRecType": "05",
+	"RevRecTypeText": "Billing"	
+},
+{
+	"__metadata": {
+		"id": "RevRecTypeF4Set('06')",
+		"uri": "RevRecTypeF4Set('06')",
+		"type": "API_SALES_ORDER_SRV.RevRecTypeF4"
+	},
+	"RevRecType": "06",
+	"RevRecTypeText": "Service Contract"	
+},
+{
+	"__metadata": {
+		"id": "RevRecTypeF4Set('07')",
+		"uri": "RevRecTypeF4Set('07')",
+		"type": "API_SALES_ORDER_SRV.RevRecTypeF4"
+	},
+	"RevRecType": "07",
+	"RevRecTypeText": "Bundled"	
+},
+{
+	"__metadata": {
+		"id": "RevRecTypeF4Set('08')",
+		"uri": "RevRecTypeF4Set('08')",
+		"type": "API_SALES_ORDER_SRV.RevRecTypeF4"
+	},
+	"RevRecType": "08",
+	"RevRecTypeText": "Unbundled"	
+},
+{
+	"__metadata": {
+		"id": "RevRecTypeF4Set('09')",
+		"uri": "RevRecTypeF4Set('09')",
+		"type": "API_SALES_ORDER_SRV.RevRecTypeF4"
+	},
+	"RevRecType": "09",
+	"RevRecTypeText": "Contract Accounting Revenue Modelling (CARM)"	
+}
+]
