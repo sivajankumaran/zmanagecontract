@@ -118,8 +118,15 @@
 									"ActionA_SalesOrder1": {
 										"id": "ActionA_SalesOrder1button",
 										"text": "{@i18n>ActionA_SalesOrder1}",
-										"press": "onBindUnBindClick"
-									}
+										"press": "onBindUnBindClick",
+										"requiresSelection": true
+									},
+									"ActionB_SalesOrder1": {
+										"id": "ActionB_SalesOrder1button",
+										"text": "Create with wizard",
+										"press": "onSalesOrderCreateWizard",
+										"requiresSelection": false
+									}									
 								}
 							}
 						}
@@ -136,7 +143,8 @@
 											"ActionA_SalesOrderSections1": {
 												"id": "ActionA_SalesOrderSections1button",
 												"text": "{@i18n>ActionA_SalesOrderSections1}",
-												"press": "onClickActionA_SalesOrderSections1"
+												"press": "onSalesOrderItemEditClick",
+												"requiresSelection": true
 											}
 										}
 									}
@@ -194,7 +202,10 @@
 									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#BundledOnly"
 								}
 							}
-						}
+						},
+	                    "createWithFilters": {        
+	                        "strategy": "extension"       
+	                    }					
 					}
 				},
 				"pages": {

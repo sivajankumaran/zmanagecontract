@@ -56,27 +56,27 @@
                <PropertyRef Name="SalesOrderItem" />
             </Key>
             <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Sales Order" sap:updatable="false"/>
-            <Property Name="SalesOrderItem" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:text="SalesOrderItemText" sap:label="Sales Order Item" sap:updatable="false"/>    
-            <Property Name="SalesOrderItemText" Type="Edm.String" MaxLength="40" sap:label="Item Text" sap:quickinfo="Short Text for Sales Order Item" sap:updatable="false"/>            
-            <Property Name="Deliverable" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Deliverable" sap:text="DeliverableText" sap:updatable="false"/>
-            <Property Name="DeliverableText" Type="Edm.String"  sap:display-format="UpperCase" sap:label="Deliverable Text" sap:updatable="false"/>            
-			<Property Name="Contracted" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Contracted" sap:updatable="false"/>	
-			<Property Name="Value" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Value" sap:quickinfo="Value" sap:updatable="false"/>
-			<Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="Currency" sap:semantics="currency-code" sap:updatable="false"/>
-			<Property Name="BillingType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Billing Type" sap:text="BillingTypeText" sap:updatable="false"/>
-            <Property Name="BillingTypeText" Type="Edm.String"  sap:display-format="UpperCase" sap:label="Billing Type Text" sap:updatable="false"/>            
-			<Property Name="RevRecType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Revenue Recognition Type" sap:text="RevRecTypeText" sap:updatable="false"/>
-            <Property Name="RevRecTypeText" Type="Edm.String" sap:display-format="UpperCase" sap:label="Revenue Recognition Type Text" sap:updatable="false"/>            
-			<Property Name="ProfitCenter" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Profit Center" sap:text="ProfitCenterText" sap:updatable="false"/>
-            <Property Name="ProfitCenterText" Type="Edm.String" sap:display-format="UpperCase" sap:label="Profit Center Text" sap:updatable="false"/>            
-			<Property Name="ValidFrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Valid From" sap:filter-restriction="interval" sap:updatable="false"/>            
-			<Property Name="ValidTo" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To" sap:filter-restriction="interval" sap:updatable="false"/>
-			<Property Name="TriggerFrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Trigger From" sap:filter-restriction="interval" sap:updatable="false"/>            
-			<Property Name="TriggerTo" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Trigger To" sap:filter-restriction="interval" sap:updatable="false"/>
-			<Property Name="SSP" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Value" sap:quickinfo="SSP" sap:updatable="false"/>
-			<Property Name="ProjectWbs" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="WBS Element" sap:updatable="false"/>
-			<Property Name="PoNumber" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="PO Number" sap:updatable="false"/>     
-			<Property Name="PoItem" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="PO Item" sap:updatable="false"/>   
+            <Property Name="SalesOrderItem" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Sales Order Item" sap:updatable="false"/>    
+            <Property Name="SalesOrderItemText" Type="Edm.String" MaxLength="40" sap:label="Item Text" sap:quickinfo="Short Text for Sales Order Item" sap:updatable="true"/>            
+            <Property Name="Deliverable" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Deliverable" sap:text="DeliverableText" sap:updatable="true"/>
+            <Property Name="DeliverableText" Type="Edm.String"  sap:display-format="UpperCase" sap:label="Deliverable Text" sap:updatable="true"/>            
+			<Property Name="Contracted" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Contracted" sap:updatable="true"/>	
+			<Property Name="Value" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Value" sap:quickinfo="Value" sap:updatable="true"/>
+			<Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="Currency" sap:semantics="currency-code" sap:updatable="true"/>
+			<Property Name="BillingType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Billing Type" sap:text="BillingTypeText" sap:updatable="true"/>
+            <Property Name="BillingTypeText" Type="Edm.String"  sap:display-format="UpperCase" sap:label="Billing Type Text" sap:updatable="true"/>            
+			<Property Name="RevRecType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Revenue Recognition Type" sap:text="RevRecTypeText" sap:updatable="true"/>
+            <Property Name="RevRecTypeText" Type="Edm.String" sap:display-format="UpperCase" sap:label="Revenue Recognition Type Text" sap:updatable="true"/>            
+			<Property Name="ProfitCenter" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Profit Center" sap:text="ProfitCenterText" sap:updatable="true"/>
+            <Property Name="ProfitCenterText" Type="Edm.String" sap:display-format="UpperCase" sap:label="Profit Center Text" sap:updatable="true"/>            
+			<Property Name="ValidFrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Valid From" sap:filter-restriction="interval" sap:updatable="true"/>            
+			<Property Name="ValidTo" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To" sap:filter-restriction="interval" sap:updatable="true"/>
+			<Property Name="TriggerFrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Trigger From" sap:filter-restriction="interval" sap:updatable="true"/>            
+			<Property Name="TriggerTo" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Trigger To" sap:filter-restriction="interval" sap:updatable="true"/>
+			<Property Name="SSP" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Value" sap:quickinfo="SSP" sap:updatable="true"/>
+			<Property Name="ProjectWbs" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="WBS Element" sap:updatable="true"/>
+			<Property Name="PoNumber" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="PO Number" sap:updatable="true"/>     
+			<Property Name="PoItem" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="PO Item" sap:updatable="true"/>   
 			<NavigationProperty Name="to_SalesOrder" Relationship="API_SALES_ORDER_SRV.assoc_salesorderitem_to_salesorder" FromRole="FromRole_assoc_salesorderitem_to_salesorder" ToRole="ToRole_assoc_salesorderitem_to_salesorder">
             	<ReferentialConstraint Property="SalesOrder" ReferencedProperty="SalesOrder" />
             </NavigationProperty>         

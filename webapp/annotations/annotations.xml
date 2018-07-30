@@ -273,9 +273,6 @@
 							<PropertyValue Property="Value" Path="Value"/>
 						</Record>
 						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="Currency"/>
-						</Record>
-						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="BillingType"/>
 						</Record>
 						<Record Type="UI.DataField">
