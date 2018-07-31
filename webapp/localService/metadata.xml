@@ -9,7 +9,7 @@
             <Key>
                <PropertyRef Name="SalesOrder" />
             </Key>
-            <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="SalesOrderText" sap:label="Sales Contract" sap:updatable="true"/>
+            <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="SalesOrderText" sap:label="Sales Contract" sap:updatable="false"/>
             <Property Name="SalesOrderText" Type="Edm.String" MaxLength="40" sap:label="Sales Order Text" sap:quickinfo="Short Text for Sales Order" sap:updatable="true"/>  
 			<Property Name="ValidFrom" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Valid From" sap:filter-restriction="interval" sap:updatable="true"/>            
 			<Property Name="ValidTo" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To" sap:filter-restriction="single-value" sap:updatable="true"/>
